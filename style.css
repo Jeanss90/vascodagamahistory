@@ -655,6 +655,27 @@ video {
     width: 9px;
 }
 
+.wages-actions {
+    text-align: center;
+}
+
+
+.wages-form {
+    background-color: var(--myblack);
+    width: 70%;
+    margin: auto;
+}
+
+[type="checkbox"].filled-in:disabled:checked+span:not(.lever):after {
+    background-color: #26a69a;
+    border-color: #26a69a;
+    cursor: not-allowed;
+}
+
+[type="checkbox"].filled-in:disabled:checked+span:not(.lever):before {
+    cursor: not-allowed;
+}
+
 #audio {
     position: fixed;
     bottom: 4.3%;

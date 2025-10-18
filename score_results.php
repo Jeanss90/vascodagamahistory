@@ -108,7 +108,7 @@ include("jogos.php");
                     <div class='field-container'>
                         <label>Score Casa: </label>
                         <div class='input-field'>
-                            $form3</input>
+                            $form3</br>
                         </div>
                     </div>
             

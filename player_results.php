@@ -133,7 +133,7 @@ include("vasco.php");
                     <div class='field-container'>
                         <label>Numero: </label>
                         <div class='input-field'>
-                            $form3</input>
+                            $form3</br>
                         </div>
                     </div>
             
@@ -521,9 +521,9 @@ include("vasco.php");
     
     }else{
     
-         header("Location: dev.php");
+        header("Location: dev.php");
     
-         exit();
+        exit();
     
     }
     

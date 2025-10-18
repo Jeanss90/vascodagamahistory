@@ -623,11 +623,11 @@ include('jogos.php');
                                     <li>
                                         <a target="_blank", href="https://en.wikipedia.org/wiki/CR_Vasco_da_Gama">CR Vasco da Gama - Wikipedia</a>
                                     </li>
-                                    <!--add Brasileirão Serie A - 2024 Season-->
+                                    <!--add Brasileirão Serie A - 2025 Season-->
                                     <li>
-                                        <a target="_blank", href="https://ge.globo.com/futebol/brasileirao-serie-a/">Brasileirão Serie A - 2024 Season</a>
+                                        <a target="_blank", href="https://ge.globo.com/futebol/brasileirao-serie-a/">Brasileirão Serie A - 2025 Season</a>
                                     </li>
-                                    <!--add Carioca 2024-->
+                                    <!--add Carioca 2025-->
                                     <li>
                                         <a target="_blank", href="https://ge.globo.com/rj/futebol/campeonato-carioca/">Carioca Championship 2025</a>
                                     </li>
