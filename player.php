@@ -421,9 +421,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
                                     #echo $old_numero;
                                     
                                     if ($select == "") {
-                                        echo "<img src='/img/players/0.png' alt='profile picture' style='width:60px; height:80px; border: var(--mygrey) 1px solid;'>";
+                                        echo "<img src='/img/player/0.png' alt='profile picture' style='width:60px; height:80px; border: var(--mygrey) 1px solid;'>";
                                     } else {
-                                        echo "<img src='/img/players/$old_numero.png' alt='$old_apelido' style='width:60px; height:80px; border: var(--mygrey) 1px solid;'>";
+                                        echo "<img src='/img/player/$old_numero.png' alt='$old_apelido' style='width:60px; height:80px; border: var(--mygrey) 1px solid;'>";
                                     }
                                     ?>
                                 </div>

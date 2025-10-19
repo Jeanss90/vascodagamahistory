@@ -36,16 +36,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         
                         
                         <h4 style="text-align: center;">Choose one the options below:</h4><br>
-                
-                        
-                        <form action="player.php" method="post" name="player_form">
+
+                        <form action="user.php" method="post" name="user_form">
                             <div class="field-container" style="padding-bottom:5px; margin-bottom:10px">
                                 <div class="input-fields"  style="display: grid; margin: auto;">
-                                    <input type="submit" name="dev" value="Lista de Jogadores" class="btn btn-info">
+                                    <input type="submit" name="user" value="Meu Perfil" class="btn btn-info">
                                 </div>
                             </div>
                         </form>
-                            
+
+                        <form action="player.php" method="post" name="player_form">
+                            <div class="field-container" style="padding-bottom:5px; margin-bottom:10px">
+                                <div class="input-fields"  style="display: grid; margin: auto;">
+                                    <input type="submit" name="player" value="Lista de Jogadores" class="btn btn-info">
+                                </div>
+                            </div>
+                        </form>
+
                         <form action="score.php" method="post" name="score_form">
                             <div class="field-container" style="padding-bottom:5px; margin-bottom:10px">
                                 <div class="input-fields"  style="display: grid; margin: auto;">

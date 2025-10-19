@@ -87,8 +87,8 @@ include("vasco.php");
                             
                             <div class="modal-body">
                                 <div class="player-info">
-                                    <img class="foto" src="/img/players/<?php
-                                        $files = scandir("img/players/");
+                                    <img class="foto" src="/img/player/<?php
+                                        $files = scandir("img/player/");
                                             $number = 0;
                                             foreach($files as $filename) {
                                                 $filenumber = basename($filename, ".png");

@@ -109,7 +109,7 @@ include("vasco.php");
             }
             
             
-            $dir = "img/players/";
+            $dir = "img/player/";
             $ext = "png";
             
             

@@ -1,4 +1,4 @@
 #do not include image, video and audio files, these are to be added via FTP
 img/
 video/
-video/
+audio/

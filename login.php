@@ -60,11 +60,25 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
                 $_SESSION['id'] = $row['id'];
 
+                $_SESSION['dob'] = $row['dob'];
+
+                $_SESSION['country'] = $row['country'];
+
+                $_SESSION['cpf'] = $row['cpf'];
+
+                $_SESSION['email'] = $row['email'];
+
+                $_SESSION['role'] = $row['role'];
+
                 $_SESSION['start'] = time();
 
-                $_SESSION['expire'] = $_SESSION['start'] + (120 * 60);
+                if ($_SESSION['role'] == 'admin') {
+                    header("Location: dev-options.php");
+                } else {
+                    header("Location: user.php");
+                }
 
-                header("Location: dev-options.php");
+                $_SESSION['expire'] = $_SESSION['start'] + (120 * 60);
 
                 exit();
 
