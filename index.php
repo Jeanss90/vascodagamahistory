@@ -33,7 +33,34 @@ include('jogos.php');
             <ul id="nav-mobile" class="right hide-on-med-and-down">  
                 <li><a href="squad.php" style="color: antiquewhite;">Current Squad</a></li>
                 <li><a href="competitions.php" style="color: antiquewhite;">Competitions</a></li>
-                <li><a href="dev.php" style="color: antiquewhite; display: flex;">Login<i class="tiny material-icons" style="margin-left: 2px">person</i></a></li>
+                <li><a href="dev.php" style="color: antiquewhite; display: flex;">
+                <?php
+                    session_start();
+
+                    if (!empty($_SESSION['id']) && !empty($_SESSION['user_name'])) {
+                        $id = $_SESSION['id'];
+                        $role = $_SESSION['role'];
+                        $name = $_SESSION['name'];
+                        $profile = "img/$role/$id.png";
+
+
+                        if ($role == "admin") {
+                            echo "Go to Admin options ";
+                        } else {
+                            echo "Go to My Profile ";
+                        }
+
+                        if (file_exists($profile)) {
+                            echo "<img src='$profile' alt='$name' style=' width: 50px; border-radius: 50%; transform: scale(0.75);'>";
+                        } else {
+                            echo "<i class='tiny material-icons' style='margin-left: 2px'>person</i>";
+                        }
+                        
+                    } else {
+                        echo "Login<i class='tiny material-icons' style='margin-left: 2px'>person</i>";
+                    }
+                ?>
+                </a></li>
             </ul>
         </div>
         

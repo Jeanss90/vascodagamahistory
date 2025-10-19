@@ -12,12 +12,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
     $cpf = $_SESSION['cpf'];
     $email = $_SESSION['email'];
     $user_name = $_SESSION['user_name'];
-    $pass = $_SESSION['pass'];
+    $password = $_SESSION['password'];
     $role = $_SESSION['role'];
 
 ?>
 
-<?php include('vasco.php')?>
+<?php/* include('vasco.php')*/?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -104,7 +104,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
                             <div class="input-field">
                                 <div style="display: inline-flex">
                                     <input type="password" id="passwordView" name="password" style="color: #28282B" disabled
-                                        <?php echo "value='$pass'";?>>
+                                        <?php echo "value='$password'";?>>
                                     <i class="material-icons" id="togglePassword" style="margin: 5px auto; cursor: pointer; color:var(--myred)">visibility</i>
                                 </div>
                             </div>

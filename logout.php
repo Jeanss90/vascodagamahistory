@@ -6,5 +6,5 @@ session_unset();
 
 session_destroy();
 
-header("Location: dev.php");
+header("Location: index.php");
 

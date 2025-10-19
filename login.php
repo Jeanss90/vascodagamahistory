@@ -4,7 +4,7 @@ session_start();
 
 include "database_users.php";
 
-if (isset($_POST['uname']) && isset($_POST['password'])) {
+if (isset($_POST['uname']) && isset($_POST['pass'])) {
 
     function validate($data){
 
@@ -20,7 +20,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     $uname = validate($_POST['uname']);
 
-    $pass = validate($_POST['password']);
+    $pass = validate($_POST['pass']);
 
     if (empty($uname) && empty($pass)) {
         
@@ -67,6 +67,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
                 $_SESSION['cpf'] = $row['cpf'];
 
                 $_SESSION['email'] = $row['email'];
+
+                $_SESSION['password'] = $row['password'];
 
                 $_SESSION['role'] = $row['role'];
 

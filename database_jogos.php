@@ -1,10 +1,10 @@
 <?php
     $hostname = "sv93.ifastnet.com";
     $userName = "vascodagama_vasc";
-    $password = "S3KLMVFjDG";
+    $pass = "S3KLMVFjDG";
     $databaseName = "vascodagama_matches";
 
-        $conn = new mysqli ($hostname, $userName, $password, $databaseName);
+        $conn = new mysqli ($hostname, $userName, $pass, $databaseName);
 
         //check connection
         if ($conn -> connect_error) {
