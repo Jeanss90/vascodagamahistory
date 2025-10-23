@@ -17,8 +17,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
 
 ?>
 
-<?php/* include('vasco.php')*/?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,32 +134,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='/script.js'></script>
     <script>
-        const passwordInput = document.getElementById('passwordView');
-        const toggleBtn = document.getElementById('togglePassword');
-        let hideTimer = null;
-
-        toggleBtn.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-            // Show password
-            passwordInput.type = 'text';
-            toggleBtn.textContent = 'visibility_off';
-            toggleBtn.style.color = '#009688';
-
-            // Re-hide after 10 seconds
-            clearTimeout(hideTimer);
-            hideTimer = setTimeout(() => {
-                passwordInput.type = 'password';
-                toggleBtn.textContent = 'visibility';
-                toggleBtn.style.color = 'var(--myred)';
-            }, 10000);
-            } else {
-            // Immediately hide if clicked again
-            passwordInput.type = 'password';
-            toggleBtn.textContent = 'visibility';
-            toggleBtn.style.color = 'var(--myred)';
-            clearTimeout(hideTimer);
-            }
-        });
+        <?php include('hide_pass.js');?>
     </script>
 
 </body>

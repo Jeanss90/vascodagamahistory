@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="copa-do-brasil.php">Copa do Brasil</a>
+                        <a class="waves-effect waves-light btn" href="copa_do_brasil.php">Copa do Brasil</a>
                     </div>
 
                     <div class="input-fields" style="text-align: center; padding: 10px">

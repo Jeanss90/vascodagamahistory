@@ -12,11 +12,11 @@ $columns = ['id', 'horario', 'casa', 'score_casa', 'penalti_casa', 'penalti_fora
 
 
 
-$fetchData = fetch_data($db, $tableName, $columns);
+$fetchData = fetch_jogos_data($db, $tableName, $columns);
 
 
 
-function fetch_data($db, $tableName, $columns) {
+function fetch_jogos_data($db, $tableName, $columns) {
 
     if(empty ($db)) {
 

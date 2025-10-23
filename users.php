@@ -1,22 +1,22 @@
 <?php
 
-include ('database_players.php');
+include ('database_users.php');
 
 
 
 $db = $conn;
 
-$tableName = 'players';
+$tableName = 'users';
 
-$columns = ['numero', 'nome_completo', 'apelido', 'data_de_nascimento', 'idade', 'posicao', 'contrato', 'termino_contrato', 'salario', 'cpf', 'role'];
-
-
-
-$fetchData = fetch_vasco_data($db, $tableName, $columns);
+$columns = ['id', 'user_name', 'password', 'name', 'dob', 'country', 'cpf', 'email', 'role'];
 
 
 
-function fetch_vasco_data($db, $tableName, $columns) {
+$fetchData = fetch_user_data($db, $tableName, $columns);
+
+
+
+function fetch_user_data($db, $tableName, $columns) {
 
     if(empty ($db)) {
 
@@ -36,7 +36,7 @@ function fetch_vasco_data($db, $tableName, $columns) {
 
         $columnName = implode(", ", $columns);
 
-        $query = "SELECT ".$columnName." FROM $tableName"." ORDER BY numero ASC";
+        $query = "SELECT ".$columnName." FROM $tableName"." ORDER BY id ASC";
 
         $result = $db->query($query);
 
@@ -52,7 +52,7 @@ function fetch_vasco_data($db, $tableName, $columns) {
 
             } else {
 
-                $msg = "Nenhum jogador disponivel";
+                $msg = "Nenhum usuario disponivel";
 
             }
 
@@ -67,5 +67,6 @@ function fetch_vasco_data($db, $tableName, $columns) {
 return $msg;
 
 }
+
 
 ?>

@@ -1,8 +1,9 @@
 <?php
 
 session_start();
+$now = time();
 
-if (!empty($_SESSION['id']) && !empty($_SESSION['user_name'])) {
+if (!empty($_SESSION['id']) && !empty($_SESSION['user_name']) && $now < $_SESSION['expire']) {
 
     if ($_SESSION['role'] == 'admin') {
             header("Location: dev-options.php");

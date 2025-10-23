@@ -81,7 +81,7 @@ include('jogos.php');
                         <ul>
                             <a href="carioca.php">Carioca</a>
                             <a href="brasileirao.php">Brasileirão</a>
-                            <a href="copa-do-brasil.php">Copa do Brasil</a>
+                            <a href="copa_do_brasil.php">Copa do Brasil</a>
                             <a href="sudamericana.php">Copa Sudamericana</a>
                             <a href="world_cup.php">World Cup 2026</a>
                         </ul>

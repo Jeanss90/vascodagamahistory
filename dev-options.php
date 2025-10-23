@@ -68,6 +68,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                 </div>
                             </div>
                         </form>
+
+                        <form action="user_manage.php" method="post" name="users_form">
+                            <div class="field-container" style="padding-bottom:5px; margin-bottom:10px">
+                                <div class="input-fields"  style="display: grid; margin: auto;">
+                                    <input type="submit" name="users" value="Lista de Usuários" class="btn btn-info">
+                                </div>
+                            </div>
+                        </form>
                     </div>
             </span>
         </div>
