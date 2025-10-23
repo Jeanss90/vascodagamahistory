@@ -6,7 +6,7 @@ $now = time();
 if (!empty($_SESSION['id']) && !empty($_SESSION['user_name']) && $now < $_SESSION['expire']) {
 
     if ($_SESSION['role'] == 'admin') {
-            header("Location: dev-options.php");
+            header("Location: dev_options.php");
         } else {
             header("Location: user.php");
         }

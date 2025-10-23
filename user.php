@@ -123,7 +123,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
                 <p style= "text-align: center">
                     <br>
                     <?php if ($role == "admin") {
-                        echo "<a href='/dev-options.php'><img class='backmainpage' >Go to options menu</a><br>";
+                        echo "<a href='/dev_options.php'><img class='backmainpage' >Go to options menu</a><br>";
                     }?>
                     <a href="/index.php">Back to main page</a>
                 </p>

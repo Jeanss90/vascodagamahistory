@@ -271,7 +271,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
 
                 <p class="center">
                     <br>
-                    <a href="/dev-options.php">Go to options menu</a><br>
+                    <a href="/dev_options.php">Go to options menu</a><br>
                     <a href="/squad.php">Go to Squad page</a>
                 </p>
             </span>

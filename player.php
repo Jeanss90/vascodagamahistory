@@ -479,7 +479,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
             
                 <p style= "text-align: center">
                     <br>
-                    <a href="/dev-options.php"><img class="backmainpage" >Go to options menu</a><br>
+                    <a href="/dev_options.php"><img class="backmainpage" >Go to options menu</a><br>
                     <a href="/squad.php"><img class="backmainpage" >Go to Squad page</a>
                 </p>
             </span>

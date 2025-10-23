@@ -75,7 +75,7 @@ if (isset($_POST['uname']) && isset($_POST['pass'])) {
                 $_SESSION['start'] = time();
 
                 if ($_SESSION['role'] == 'admin') {
-                    header("Location: dev-options.php");
+                    header("Location: dev_options.php");
                 } else {
                     header("Location: user.php");
                 }

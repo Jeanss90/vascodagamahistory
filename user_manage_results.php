@@ -208,7 +208,7 @@ include("users.php");
         
         <p style= "text-align: center">
             <a href="/user_manage.php"><img class="backmainpage">Back to Users List</a><br>
-            <a href="/dev-options.php"><img class="backmainpage">Go to options menu</a><br>
+            <a href="/dev_options.php"><img class="backmainpage">Go to options menu</a><br>
             <a href="/squad.php"><img class="backmainpage">Go to Squad page</a>
         </p>
     </div>
