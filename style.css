@@ -110,6 +110,10 @@ table.highlight>tbody>tr.br2:hover {
     background-color: var(--brasileirao-second2) !important;
 }
 
+table.highlight>tbody>tr.brlib:hover {
+    background-color: var(--brasileirao-second2) !important;
+}
+
 table.highlight>tbody>tr.br3:hover {
     background-color: var(--brasileirao-green2) !important;
 }

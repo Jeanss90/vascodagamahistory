@@ -94,6 +94,18 @@
                                         $now = date("Y-m-d H:i:s");
                                         $starter = $now;
 
+                                        $libertadoresClube = "Palmeiras";
+                                        $libertadoresFinished = false;
+                                        $libertadoresCount = 0;
+
+                                        $copaDoBrasilClube = false;
+                                        $copaDoBrasilFinished = false;
+                                        $copaDoBrasilCount = 0;
+
+                                        $sudamericanaClube = false;
+                                        $sudamericanaFinished = false;
+                                        $sudamericanaCount = 0;
+
                                         while($row = mysqli_fetch_assoc($result)) // Showing all the data
                                         {
 
@@ -281,16 +293,48 @@
                                     <tr
                                     <?php
                                         if ($starter < $now) {
-                                            if ($position == 1) {
-                                                echo ' class="br1" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: var(--brasileirao-green)"';
-                                            } else if ($position >= 2 && $position <= 4 ) {
+
+                                            switch ($position) {
+                                                case 1:
+                                                    echo ' class="br1" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: var(--brasileirao-green)"';
+                                                case 17:
+                                                case 18:
+                                                case 19:
+                                                case 20:
+                                                    echo ' class="brreleg" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-red)"';
+                                            }
+
+                                            if ($libertadoresClube == $clube && $copaDoBrasilClube == $clube) {
+                                                $libertadoresCount++;
+                                                $copaDoBrasilCount++;
+                                                if ($libertadoresFinished && $copaDoBrasilFinished) {
+                                                    echo ' class="brlib" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: var(--mygold)"';
+                                                }
+                                            } else if ($libertadoresClube == $clube) {
+                                                $libertadoresCount++;
+                                                if ($libertadoresFinished) {
+                                                    echo ' class="brlib" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: var(--mygold)"';
+                                                }
+                                            } else if ($copaDoBrasilClube == $clube) {
+                                                $copaDoBrasilCount++;
+                                                if ($copaDoBrasilFinished) {
+                                                    echo ' class="brlib" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: var(--mygold)"';
+                                                }
+                                            } else if ($sudamericanaClube == $clube) {
+                                                $sudamericanaCount++;
+                                                if ($sudamericanaFinished) {
+                                                    echo ' class="brlib" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: var(--mygold)"';
+                                                }
+                                            }
+
+                                            if ($position >=2 && $position <=4) {
                                                 echo ' class="br1" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: antiquewhite"';
-                                            } else if ($position  >= 5 && $position <= 6) {
+                                            } else if ($position >= 2+$libertadoresCount+$copaDoBrasilCount+$sudamericanaCount && $position <= 4+$libertadoresCount+$copaDoBrasilCount+$sudamericanaCount) {
+                                                echo ' class="br1" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-main); color: antiquewhite"';
+                                            } else if ($position  >= 5+$libertadoresCount+$copaDoBrasilCount+$sudamericanaCount && $position <= 6+$libertadoresCount+$copaDoBrasilCount+$sudamericanaCount) {
                                                 echo ' class="br2" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-second); color: antiquewhite"';
-                                            } else if ($position >= 7 && $position <= 12) {
+                                            } else if ($position >= 7+$libertadoresCount+$copaDoBrasilCount+$sudamericanaCount && $position <= 12+$libertadoresCount+$copaDoBrasilCount+$sudamericanaCount) {
                                                 echo ' class="br3" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-green); color: var(--brasileirao-main)"';
-                                            } else if ($position >= 17) {
-                                                echo ' class="brreleg" style="font-weight:bold; font-style: italic; background-color: var(--brasileirao-red)"';
                                             }
                                         }
                                     ?>
