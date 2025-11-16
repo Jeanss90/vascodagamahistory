@@ -42,7 +42,7 @@
                         <div class="row">
 
                             <?php
-                                $sql = 'SELECT * FROM clubs_wc;';    // Select table here 
+                                $sql = 'SELECT * FROM clubs_wc WHERE date_q IS NOT NULL ORDER BY id;';    // Select table here 
                                 $result = mysqli_query($conn,$sql);  // here i am run the query
                                 $i = 1;                             // only creates sequence of the data
                                 
