@@ -102,8 +102,8 @@
                                         $copaDoBrasilFinished = false;
                                         $copaDoBrasilCount = 0;
 
-                                        $sudamericanaClube = false;
-                                        $sudamericanaFinished = false;
+                                        $sudamericanaClube = "Lanus";
+                                        $sudamericanaFinished = true;
                                         $sudamericanaCount = 0;
 
                                         while($row = mysqli_fetch_assoc($result)) // Showing all the data

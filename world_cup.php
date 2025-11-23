@@ -80,6 +80,7 @@
                                 }
                             ?>
                         </div>
+                        <iframe src="/world_cup_group.php" style="width: 100%; height: 1440px; border: none;"></iframe>
                     </div>
                 </span>
             </div>

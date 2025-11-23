@@ -293,12 +293,12 @@ video {
 }
 
 .error {
-   background: var(--myred);
-   color: antiquewhite;
-   padding: 5px;
-   width: 70%;
-   border-radius: 5px;
-   margin: 10px auto;
+    background: var(--myred);
+    color: antiquewhite;
+    padding: 5px;
+    width: 70%;
+    border-radius: 5px;
+    margin: 10px auto;
 }
 
 .error-pages {
