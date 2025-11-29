@@ -13,7 +13,7 @@ body {
 }
 
 .title {
-    height: 400px;
+    height: 300px;
     box-shadow: 0 5px 10px rgba(2, 18, 44, 0.3);
 }
 
@@ -32,64 +32,15 @@ body {
     font-size: 72px;
 }
 
-.title p {
-    font-size: 36px;
-    text-align: center;
-    padding: 20px;
-}
-
-.pots {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.pots h3 {
-    font-size: 50px;
-    text-align: center;
-    padding: 20px;
-}
-
-.pots li {
-    list-style: none;
-    margin: 5px;
-    padding: 10px 90px;
-    background: linear-gradient(45deg, #1A3374, #3074a8);
-    color: #fff;
-    font-size: 40px;
-    border-radius: 50px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    cursor: pointer;
-    box-shadow: 4px 7px 10px 3px rgba(0, 0, 0, 0.4);
-}
-
-.pots img {
-    background: #fff;
-    margin-right: 40px;
-    width: 40px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: inherit;
-    box-shadow: 0 0px 11px 4px rgba(255, 255, 255, 0.3);
-    transform: scale(1.5);
-}
-
-.pots img:hover {
-    transform: scale(1.75);
-    transition: 0.25s;
-}
-
 .groups {
-    margin: 60px;
+    margin: 60px 0;
 }
 
 .groups-section {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .group-items {
@@ -97,7 +48,7 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 3px 5px 9px rgba(2, 18, 44, 0.3);
-    width: 400px;
+    width: 1968px;
     position: relative;
     overflow: hidden; /*ensures it respects border-radius*/
 }
@@ -115,6 +66,7 @@ body {
 .group-items > * {
     position: relative; /* ensures your content appears *above* the triangle */
     z-index: 1;
+    padding: 12px;
 }
 
 #groupa.group-items::after{background: #68C076;}
@@ -130,18 +82,25 @@ body {
 #groupk.group-items::after{background: #EF3875;}
 #groupl.group-items::after{background: #7F011D;}
 
-.group-items li{
+.group-items table {
+    width: 1968px;
+    display: table;
+    padding: 0 25px;
+}
+
+.group-items thead {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.group-items td{
     list-style: none;
     padding: 3px 20px;
     margin: 10px 25px;
     background: aliceblue;
     font-size: 30px;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 50px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: 1s;
 }
 
@@ -151,62 +110,45 @@ body {
     padding-bottom: 10px;
 }
 
-.team-drawn {
-    background: linear-gradient(45deg, var(--i) 70%, var(--j) 90%) !important;
-    color: #fff !important;
-    margin: 10px 25px !important;
-}
-
-.team-drawn:hover {
-    transform: scale(1.2) !important;
-    transition: 0.3s !important;
-}
-
 
 @media only screen and (max-width: 2042px) {
-    .pots li {
-        padding: 8px 60px;
-    }
-
     .groups {
         margin: 40px;
     }
 
     .group-items {
-        margin: 20px 8px;
-        width: 340px;
+        width: 1668px;
+    }
+
+    .group-items table {
+        width: 1668px;
     }
 }
 
 @media only screen and (max-width: 1786px) {
-    .pots li {
-        padding: 8px 40px;
-        font-size: 36px;
-    }
-
-    .pots img {
-        margin-right: 30px;
-    }
-
     .groups {
         margin: 40px 20px;
     }
 
     .group-items {
-        width: 280px;
+        width: 1436px;
     }
 
-    .group-items li {
+    .group-items table {
+        width: 1436px;
+    }
+
+    .group-items td {
         font-size: 26px;
         margin: 10px 15px;
-    }
-
-    .team-drawn {
-        margin: 10px 15px !important;
     }
 }
 
 @media only screen and (max-width: 1536px) {
+    .title {
+        height: 270px;
+    }
+    
     .logo img {
         width: 135px;
     }
@@ -214,31 +156,13 @@ body {
     .logo h1 {
         font-size: 60px;
     }
-    
-    .title p {
-        font-size: 33px;
-    }
-
-    .pots li {
-        padding: 8px 20px;
-        font-size: 34px;
-    }
-
-    .pots h3 {
-        font-size: 40px;
-    }
-
-    .pots img {
-        margin-right: 20px;
-        transform: scale(1.2);
-    }
-
-    .pots img:hover {
-        transform: scale(1.5);
-    }
 
     .group-items {
-        width: 250px;
+        width: 1300px;
+    }
+
+    .group-items table {
+        width: 1300px;
     }
 
     .group-items::after {
@@ -249,42 +173,33 @@ body {
         font-size: 32px;
     }
 
-    .group-items li {
+    .group-items td {
         font-size: 26px;
     }
 }
 
 @media only screen and (max-width: 1380px) {
-    .logo img {
-        width: 120px;
-    }
-    
-    .pots li {
-        padding: 8px 16px;
-        font-size: 30px;
+    .group-items {
+        width: 1200px;
     }
 
-    .group-items {
-        width: 230px;
+    .group-items table{
+        width: 1200px;
     }
 
     .group-items::after {
         clip-path: path("M 0 0 L 0,138 A -12,-10 43,0,1 570,381 L 466 0 z");
     }
 
-    .group-items li {
+    .group-items td {
         font-size: 22px;
         margin: 10px 10px;
-    }
-
-    .team-drawn {
-        margin: 10px 10px !important;
     }
 }
 
 @media only screen and (max-width: 1280px) {
     .title {
-        height: 350px;
+        height: 230px;
     }
     
     .logo img {
@@ -295,59 +210,43 @@ body {
         font-size: 50px;
     }
 
-    .title p {
-        font-size: 28px;
-    }
-
-    .pots {
-        margin-top: 51px;
-    }
-
     .group-items{
-        width: 220px;
+        width: 1080px;
         padding: 16px;
+    }
+
+    .group-items table{
+        width: 1080px;
     }
 
     .group-items h4 {
         font-size: 28px;
     }
 
-    .group-items li {
+    .group-items td {
         font-size: 24px;
         margin: 10px 10px;
-    }
-
-    .team-drawn {
-        margin: 10px 10px !important;
     }
 }
 
 @media only screen and (max-width: 1180px) {
-    .pots li {
-        font-size: 28px;
-    }
-
-    .pots img {
-        transform: scale(1);
-    }
-
-    .pots img:hover {
-        transform: scale(1.2);
-    }
-
     .groups {
         margin: 40px 15px;
     }
 
     .group-items {
-        width: 200px;
+        width: 880px;
+    }
+
+    .group-items table{
+        width: 880px;
     }
 
     .group-items::after {
         clip-path: path("M 0 0 L -5,143 A -14,-11 39,0,1 570,344 L 466 0 z")
     }
 
-    .group-items li {
+    .group-items td {
         font-size: 20px;
     }
 
@@ -357,10 +256,6 @@ body {
 }
 
 @media only screen and (max-width: 1124px) {
-    .pots {
-        flex-direction: column;
-    }
-
     .groups-section {
         flex-direction: column;
     }
@@ -368,7 +263,7 @@ body {
 
 @media only screen and (max-width: 956px) {
     .title {
-        height: 300px;
+        height: 180px;
     }
 
     .logo img {
@@ -378,23 +273,88 @@ body {
     .logo h1 {
         font-size: 36px;
     }
+
+    .group-items {
+        width: 760px;
+    }
+
+    .group-items table {
+        width: 760px;
+    }
 }
 
 @media only screen and (max-width: 820px) {
-    .title p {
-        font-size: 22px;
+    .logo h1 {
+        text-align: center;
+    }
+
+    .group-items {
+        width: 570px;
+    }
+
+    .group-items table {
+        width: 570px;
+        padding: 0 12px;
+    }
+
+    .group-items td {
+        font-size: 14px;
+        padding: 3px 18px;
     }
 }
 
 @media only screen and (max-width: 640px) {
-    .logo h1 {
-        text-align: center;
+    .group-items {
+        width: 450px;
+        margin: 16px;
+    }
+
+    .group-items table {
+        width: 450px;
+    }
+
+    .group-items td {
+        font-size: 12px;
+    }
+
+    .group-items td:nth-child(1), td:nth-child(4) {
+        visibility: hidden;
+        display: none;
     }
 }
 
 @media only screen and (max-width: 512px) {
     .title {
-        height: 350px;
+        height: 160px;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .logo h1{
+        font-size: 30px;
+    }
+
+    .groups {
+        margin: 25px 15px;
+    }
+
+    .group-items {
+        width: 390px;
+    }
+
+    .group-items h4 {
+        font-size: 20px;
+    }
+
+    .group-items table {
+        width: 390px;
+    }
+
+    .group-items td:nth-child(10) {
+        visibility: hidden;
+        display: none;
     }
 }
 
@@ -402,10 +362,50 @@ body {
     .logo h1 {
         font-size: 30px;
     }
+
+    .group-items {
+        width: 320px;
+    }
+
+    .group-items table{
+        width: 320px;
+    }
+
+    .group-items td{
+        font-size: 10px;
+        padding: 3px 14px;
+    }
 }
 
 @media only screen and (max-width: 384px) {
     .title {
-        height: 375px;
+        height: 130px;
+    }
+
+    .logo h1 {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 45px;
+        padding: 20px;
+    }
+
+    .group-items > * {
+        padding: 0px;
+    }
+
+    .group-items {
+        width: 260px;
+    }
+
+    .group-items table {
+        width: 260px;
+        padding: 0px;
+    }
+
+    .group-items td {
+        font-size: 8px;
+        padding: 3px 12px;
     }
 }

@@ -8,7 +8,7 @@ $db = $conn;
 
 $tableName = 'players';
 
-$columns = ['numero', 'nome_completo', 'apelido', 'data_de_nascimento', 'idade', 'posicao', 'contrato', 'termino_contrato', 'salario', 'cpf', 'role'];
+$columns = ['numero', 'nome_completo', 'apelido', 'data_de_nascimento', 'idade', 'posicao', 'contrato', 'termino_contrato', 'salario', 'cpf'];
 
 
 
