@@ -94,8 +94,8 @@
                                         $now = date("Y-m-d H:i:s");
                                         $starter = $now;
 
-                                        $libertadoresClube = "Palmeiras";
-                                        $libertadoresFinished = false;
+                                        $libertadoresClube = "Flamengo";
+                                        $libertadoresFinished = true;
                                         $libertadoresCount = 0;
 
                                         $copaDoBrasilClube = false;

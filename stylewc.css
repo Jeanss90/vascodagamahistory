@@ -13,6 +13,7 @@ body {
 }
 
 .title {
+    width: 2114px;
     height: 400px;
     box-shadow: 0 5px 10px rgba(2, 18, 44, 0.3);
 }
