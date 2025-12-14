@@ -83,7 +83,7 @@ include('jogos.php');
                             <a href="brasileirao.php">Brasileirão</a>
                             <a href="copa_do_brasil.php">Copa do Brasil</a>
                             <a href="sudamericana.php">Copa Sudamericana</a>
-                            <a href="world_cup.php">World Cup 2026</a>
+                            <a href="world_cup_group_full.php">World Cup 2026</a>
                         </ul>
                     </div>
                 </li>

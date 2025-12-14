@@ -247,7 +247,7 @@ body {
     }
 
     .group-items td {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .group-items h4 {
@@ -298,7 +298,7 @@ body {
     }
 
     .group-items td {
-        font-size: 14px;
+        font-size: 10px;
         padding: 3px 18px;
     }
 }
@@ -313,13 +313,9 @@ body {
         width: 450px;
     }
 
-    .group-items td {
-        font-size: 12px;
-    }
-
-    .group-items td:nth-child(1), td:nth-child(4) {
-        visibility: hidden;
+    .group-items td[data-hide="true"] {
         display: none;
+        visibility: hidden;
     }
 }
 

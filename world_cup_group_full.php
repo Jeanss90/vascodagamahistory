@@ -21,7 +21,7 @@
             </a>
             <h1>World Cup 2026 Group Stage</h1>
         </div>
-    </divL>
+    </div>
 
     <div class="groups">
         <div class="groups-section">
@@ -30,10 +30,10 @@
                     <h4>Group A</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -45,6 +45,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupb">
@@ -52,10 +53,10 @@
                     <h4>Group B</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -67,6 +68,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupc">
@@ -74,10 +76,10 @@
                     <h4>Group C</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -89,6 +91,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupd">
@@ -96,10 +99,10 @@
                     <h4>Group D</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -111,6 +114,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupe">
@@ -118,10 +122,10 @@
                     <h4>Group E</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -133,6 +137,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupf">
@@ -140,10 +145,10 @@
                     <h4>Group F</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -155,6 +160,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupg">
@@ -162,10 +168,10 @@
                     <h4>Group G</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -177,6 +183,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="grouph">
@@ -184,10 +191,10 @@
                     <h4>Group H</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -199,6 +206,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupi">
@@ -206,10 +214,10 @@
                     <h4>Group I</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -221,6 +229,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupj">
@@ -228,10 +237,10 @@
                     <h4>Group J</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -243,6 +252,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupk">
@@ -250,10 +260,10 @@
                     <h4>Group K</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -265,6 +275,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
 
             <div class="group-items" id="groupl">
@@ -272,10 +283,10 @@
                     <h4>Group L</h4>
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td data-hide="true">#</td>
                             <td>Team</td>
                             <td>Pts</td>
-                            <td>P</td>
+                            <td data-hide="true">P</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -287,6 +298,7 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <p>*all times are local</p>
             </div>
         </div>
     </div>

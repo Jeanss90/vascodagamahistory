@@ -21,8 +21,6 @@
             </a>
             <h1>World Cup 2026 Group Stage</h1>
         </div>
-        
-        <p>The Draw for the World Cup 2026 will take place at the Kennedy Center in Washington D.C, on Friday December 5th at 12:00 UTC-5 (EST).</p>
     </div>
 
     <div class="pots" id="pots"></div>

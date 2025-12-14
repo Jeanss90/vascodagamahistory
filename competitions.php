@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="world_cup.php">World Cup 2026</a>
+                        <a class="waves-effect waves-light btn" href="world_cup_group_full.php">World Cup 2026</a>
                     </div>
 
                     <p style= "text-align: center">

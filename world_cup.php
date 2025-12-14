@@ -80,9 +80,6 @@
                                 }
                             ?>
                         </div>
-                        <iframe src="/world_cup_group.php" style="width: 100%; height: 100vh; border: none;"></iframe>
-                        <iframe src="/world_cup_group_full.php" style="width: 100%; height: 100vh; border: none;"></iframe>
-                        <iframe src="/world_cup_knockout.php" style="width: 100%; height: 100vh; border: none;"></iframe>
                     </div>
                 </span>
             </div>
