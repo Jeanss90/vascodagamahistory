@@ -1,4 +1,5 @@
 <?php
+/*TESTE DE API*/
 
 include "database_jogos.php";
 

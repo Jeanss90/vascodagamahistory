@@ -88,11 +88,8 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='/script.js'></script>
-</body>
-<footer>
-    <?php
-        include('footer.php');
-    ?>
-</footer>
+
+    <?php include('footer.php');?>
     
+</body>
 </html>

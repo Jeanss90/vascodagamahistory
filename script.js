@@ -1,52 +1,17 @@
-M.AutoInit();
+const loader = document.getElementById("loader-overlay");
+const loginBox = document.getElementById("offload-block");
+const offload = document.getElementById("offload-flex");
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems, options);
+window.addEventListener("load", function () {
+    loader.classList.add("fade-out");
+    loginBox.style.display = "block";
+    offload.style.display = "flex";
+
+    // Wait for CSS transition to finish, then hide loader
+    loader.addEventListener("transitionend", function () {
+        loader.style.display = "none";
+    }, { once: true });
 });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, options);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, options);
-});
-
-/* does not work correctly on ios iphone
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var options = {
-        'yearRange': 50
-    }
-    var instances = M.Datepicker.init(elems, options);
-});
-
-*/
-
-
-var audio = new Audio("/audio/hino.mp3");
-
-function startMusic() {
-    var mute = document.getElementById("audio");
-    if (audio.paused || audio.ended) {
-        mute.innerHTML = "volume_up";
-        audio.currentTime = 0;
-        audio.play();
-    } else {
-        mute.innerHTML = "volume_off";
-        audio.pause();
-    }
-}
 
 
 function modeHover() {
@@ -67,7 +32,6 @@ function modeHover() {
         }
     }
 }
-
 
 function moveTablePrev(x) {
     var showCurrent = document.getElementById("round"+x);
@@ -91,8 +55,8 @@ function moveTableNext(x) {
 }
 
 function moveTablePrevGroup(y, x) {
-    var showCurrent = document.getElementById("group"+y+" round"+x);
-    var prev = document.getElementById("group"+y+" round"+(x-1));
+    var showCurrent = document.getElementById("group"+y+"_round"+x);
+    var prev = document.getElementById("group"+y+"_round"+(x-1));
     
     showCurrent.classList.remove("show");
     showCurrent.classList.add("hidden");
@@ -102,8 +66,8 @@ function moveTablePrevGroup(y, x) {
 
 
 function moveTableNextGroup(y, x) {
-    var showCurrent = document.getElementById("group"+y+" round"+x);
-    var next = document.getElementById("group"+y+" round"+(x+1));
+    var showCurrent = document.getElementById("group"+y+"_round"+x);
+    var next = document.getElementById("group"+y+"_round"+(x+1));
     
     showCurrent.classList.remove("show");
     showCurrent.classList.add("hidden");
@@ -111,29 +75,10 @@ function moveTableNextGroup(y, x) {
     next.classList.add("show");
 }
 
-function audioHover() {
-    var audio = document.getElementById("audio");
-    audio.style.cursor = "pointer"
-}
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-
-setTimeout(() => {
-    document.getElementsByClassName("preloader-wrapper active center")[0].style.visibility = "hidden";
-    document.getElementsByClassName("preloader-wrapper active center")[0].style.display = "none";
-    document.getElementsByClassName("game")[0].style.visibility = "visible";
-    document.getElementsByClassName("game")[0].style.display = "flex";
-
-    var x = window.matchMedia("screen and (max-width: 540px)");
-    checkMedia(x);
-    x.addListener(checkMedia);
-    function checkMedia(x){
-
-        if(x.matches){
-            console.log('media-540px');
-            document.getElementsByClassName("game")[0].style.display = "block";
-        } else {
-            console.log('normal-media');
-            document.getElementsByClassName("game")[0].style.display = "flex";
-        }
-    }    
-}, 5000);
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+});

@@ -19,125 +19,108 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#28282B"/>
-    <title>Meu Perfil</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
+    <head>
+    <title>Profile</title>
+    <?php include('head.php');?>
+    </head>
 
 
-<body class="player-form">
+    <body>
+        <?php include('logged-in-header.php');?>
 
-    <?php include('loggedinheader.php');?>
+        <div class="container">
+            <div class="form-style">
+            
+                <h1>User Profile</h1>
 
-    <div class="section">
-        <div class="card-panel">   
-            <span>
-                <div class="form-style">
-                
-                    <h1 style="text-align: center;">Perfil de Usuário</h1>
-
-                    <div class="form-container">
-                
-                        <div class="field-container">
-                            <label for="nome_completo">Nome Completo: </label>
-                            <div class="input-field">
-                                <input type="text" id="nome_completo" name="nome_completo" style="color: #28282B" disabled
-                                    <?php echo "value='$name'";?>>
-                            </div>
+                <div class="form-container">
+            
+                    <div class="field-container">
+                        <label class="label-field" for="nome_completo">Full Name: </label>
+                        <div>
+                            <input class="input-field" type="text" id="nome_completo" name="nome_completo" disabled
+                                <?php echo "value='$name'";?>>
                         </div>
-        
-                        <div class="field-container">
-                            <label for="dob">Data de Nascimento: </label>
-                            <div class="input-field">
-                                <input type="date" id="dob" name="dob" style="color: #28282B" disabled
-                                    <?php echo "value='$dob'";
-                                    ?>><br>
-                            </div>
+                    </div>
+    
+                    <div class="field-container">
+                        <label class="label-field" for="dob">Date of Birth: </label>
+                        <div>
+                            <input class="input-field" type="date" id="dob" name="dob" disabled
+                                <?php echo "value='$dob'";
+                                ?>>
                         </div>
+                    </div>
 
-                        <div class="field-container">
-                            <label for="country">País de Nascimento: </label>
-                            <div class="input-field">
-                                <input type="text" id="country" name="country" style="color: #28282B" disabled
-                                    <?php echo "value='$country'";?>>
-                            </div>
+                    <div class="field-container">
+                        <label class="label-field" for="country">Country: </label>
+                        <div>
+                            <input class="input-field" type="text" id="country" name="country" disabled
+                                <?php echo "value='$country'";?>>
                         </div>
+                    </div>
 
-                        <div class="field-container">
-                            <label for="cpf">CPF: </label>
-                            <div class="input-field">
-                                <input type="text" id="cpf" name="cpf" style="color: #28282B" disabled
-                                    <?php echo "value='$cpf'";?>>
-                            </div>
+                    <div class="field-container">
+                        <label class="label-field" for="cpf">CPF: </label>
+                        <div>
+                            <input class="input-field" type="text" id="cpf" name="cpf" disabled
+                                <?php echo "value='$cpf'";?>>
                         </div>
+                    </div>
 
-                        <div class="field-container">
-                            <label for="email">Email: </label>
-                            <div class="input-field">
-                                <input type="email" id="email" name="email" style="color: #28282B" disabled
-                                    <?php echo "value='$email'";?>>
-                            </div>
+                    <div class="field-container">
+                        <label class="label-field" for="email">Email: </label>
+                        <div>
+                            <input class="input-field" type="email" id="email" name="email" disabled
+                                <?php echo "value='$email'";?>>
                         </div>
+                    </div>
 
-                        <div class="field-container">
-                            <label for="user_name">Username: </label>
-                            <div class="input-field">
-                                <input type="text" id="user_name" name="user_name" style="color: #28282B" disabled
-                                    <?php echo "value='$user_name'";?>>
-                            </div>
+                    <div class="field-container">
+                        <label class="label-field" for="user_name">Username: </label>
+                        <div>
+                            <input class="input-field" type="text" id="user_name" name="user_name" disabled
+                                <?php echo "value='$user_name'";?>>
                         </div>
+                    </div>
 
-                        <div class="field-container">
-                            <label for="password">Password: </label>
-                            <div class="input-field">
-                                <div style="display: inline-flex">
-                                    <input type="password" id="passwordView" name="password" style="color: #28282B" disabled
-                                        <?php echo "value='$password'";?>>
-                                    <i class="material-icons" id="togglePassword" style="margin: 5px auto; cursor: pointer; color:var(--myred)">visibility</i>
-                                </div>
-                            </div>
-                        </div>
-
-                
-                        <div class="field-container">
-                            <label>Profile Picture: </label>
-                            <div class="input-field">
-                                <?php
-                                    echo "<img src='/img/$role/$id.png' alt='$name' style='width:60px; height:80px; border: var(--mygrey) 1px solid;'>";
-                                ?>
+                    <div class="field-container">
+                        <label class="label-field" for="password">Password: </label>
+                        <div>
+                            <div style="display: inline-flex">
+                                <input style="width: 100%;" class="input-field" type="password" id="passwordView" name="password" disabled
+                                    <?php echo "value='$password'";?>>
+                                <span class="material-symbols-outlined" id="togglePassword" style="margin: 5px; cursor: pointer; color:var(--error)">visibility</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            
-                <p style= "text-align: center">
-                    <br>
-                    <?php if ($role == "admin") {
-                        echo "<a href='/dev_options.php'><img class='backmainpage' >Go to options menu</a><br>";
-                    }?>
-                    <a href="/index.php">Back to main page</a>
-                </p>
-            </span>
-        </div>
-    </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src='/script.js'></script>
-    <script>
-        <?php include('hide_pass.js');?>
-    </script>
 
-</body>
+                    <div class="field-container">
+                        <label class="label-field"> Profile Picture: </label>
+                        <div class="input-field" style="height: 95px !important; text-align: center">
+                            <?php
+                                echo "<img src='/img/$role/$id.png' alt='$name'>";
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php if ($role == "admin") {
+            echo "<p class='back'>
+                <a href='/dev-options.php'>Go to options menu</a><br>
+            </p>";
+        }?>
+        
+        <?php include('back-to-main.html');?>
+        
+        <?php include('footer.php');?>
+
+        <script src='/script.js'></script>
+        <script>
+            <?php include('hide-pass.js');?>
+        </script>
+    </body>
 </html>
 
 <?php 

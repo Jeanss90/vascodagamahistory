@@ -1,67 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#28282B"/>
     <title>Competitions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
-
-
-
-
-<body class="background">
-    <div class="center-align">
-        <div class="section">
-            <div class="card-panel">
-                <span>
-                    <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="carioca.php">Carioca</a>
-                    </div>
-
-                    <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="brasileirao.php">Brasileirão</a>
-                    </div>
-
-                    <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="copa_do_brasil.php">Copa do Brasil</a>
-                    </div>
-
-                    <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="sudamericana.php">Copa Sudamericana</a>
-                    </div>
-
-                    <div class="input-fields" style="text-align: center; padding: 10px">
-                        <a class="waves-effect waves-light btn" href="world_cup_group_full.php">World Cup 2026</a>
-                    </div>
-
-                    <p style= "text-align: center">
-                        <a href="/index.php"><img class="backmainpage">Back to main page</a>
-                    </p>
-
-                </span>
-            </div>
-        </div>
-    </div>
+    <?php include('head.php');?>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/script.js"></script>
+    <body>
+        <?php include('nav.php');?>
 
+        <div class="body-page">            
+            <div class="grid-competitions">
+                <div class="grid-competitions-box">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/carioca2025_vertical.svg" alt="Carioca">
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="carioca.php" rel="noopener noreferrer">
+                                    <h6>Carioca 2025</h6>
+                                    <div>
+                                        <img src="https://s.sde.globo.com/media/organizations/2021/09/04/vasco_SVG.svg" alt="Vasco da Gama">
+                                        <span>4th Place</span>
+                                    </div>
+                                    <ul>
+                                        <li>Points: <span>17</span></li>
+                                        <li>Wins: <span>4</span></li>
+                                        <li>Goals For: <span>13</span></li>
+                                        <li>Goals Against: <span>9</span></li>
+                                        <li>Goal Difference: <span>4</span></li>
+                                        <li>SF: <span style="text-decoration: line-through">Fluminense</span>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-</body>
+                <div class="grid-competitions-box">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/brasileirao.svg" alt="Brasileirao">
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="brasileirao.php" rel="noopener noreferrer">
+                                    <h6>Brasileirao 2025</h6>
+                                    <div>
+                                        <img src="https://s.sde.globo.com/media/organizations/2021/09/04/vasco_SVG.svg" alt="Vasco da Gama">
+                                        <span>14th Place</span>
+                                    </div>
+                                    <ul>
+                                        <li>Points: <span>45</span></li>
+                                        <li>Wins: <span>13</span></li>
+                                        <li>Goals For: <span>55</span></li>
+                                        <li>Goals Against: <span>60</span></li>
+                                        <li>Goal Difference: <span>-5</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<footer>
-    <?php
-        include('footer.php');
-    ?>
-</footer>
+                <div class="grid-competitions-box">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/copa_do_brasil.png" alt="Copa do Brasil">
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="copa-do-brasil.php" rel="noopener noreferrer">
+                                    <h6>Copa do Brasil 2025</h6>
+                                    <div>
+                                        <img src="https://s.sde.globo.com/media/organizations/2021/09/04/vasco_SVG.svg" alt="Vasco da Gama">
+                                        <span style="background: var(--silver); color: var(--light) !important;">2nd Place</span>
+                                    </div>
+                                    <ul>
+                                        <li>R1: <span>Uniao Rondonopolis</span></li>
+                                        <li>R2: <span>Nova Iguacu</span></li>
+                                        <li>R3: <span>Operario</span></li>
+                                        <li>R-16: <span>CSA</span></li>
+                                        <li>QF: <span>Botafogo</span></li>
+                                        <li>SF: <span>Fluminense</span></li>
+                                        <li>F: <span style="text-decoration: line-through">Corinthians</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="grid-competitions-box">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/copa_sudamericana.svg" alt="Copa Sudamericana">
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="sudamericana.php" rel="noopener noreferrer">
+                                    <h6>Copa Sudamericana 2025</h6>
+                                    <div>
+                                        <img src="https://s.sde.globo.com/media/organizations/2021/09/04/vasco_SVG.svg" alt="Vasco da Gama">
+                                        <span>Round 2</span>
+                                    </div>
+                                    <ul>
+                                        <li>G: <span>Lanus, Puerto Cabello, Melgar</span></li>
+                                        <li>R2: <span style="text-decoration: line-through">Independiente del Valle</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-competitions-box">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/wc26/2026_FIFA_World_Cup_emblem.svg" alt="World Cup 2026">
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="world-cup-group-full.php" rel="noopener noreferrer">
+                                    <h6>World Cup 2026</h6>
+                                    <div>
+                                        <img src="img/fed/brazil.svg" alt="Vasco da Gama">
+                                        <span>June 2026</span>
+                                    </div>
+                                    <ul>
+                                        <li>G: <span>Morocco, Haiti, Scotland</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php include('back-to-main.html');?>
+        </div>
+
+        <?php include('footer.php');?>
+
+        <script src='/script.js'></script>
+    </body>
 </html>

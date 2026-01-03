@@ -10,18 +10,18 @@
         toggleBtn.textContent = 'visibility_off';
         toggleBtn.style.color = '#009688';
 
-        // Re-hide after 10 seconds
+        // Re-hide after 5 seconds
         clearTimeout(hideTimer);
         hideTimer = setTimeout(() => {
             passwordInput.type = 'password';
             toggleBtn.textContent = 'visibility';
-            toggleBtn.style.color = 'var(--myred)';
-        }, 10000);
+            toggleBtn.style.color = 'var(--error)';
+        }, 5000);
         } else {
         // Immediately hide if clicked again
         passwordInput.type = 'password';
         toggleBtn.textContent = 'visibility';
-        toggleBtn.style.color = 'var(--myred)';
+        toggleBtn.style.color = 'var(--error)';
         clearTimeout(hideTimer);
         }
     });

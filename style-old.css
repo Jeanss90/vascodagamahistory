@@ -1,0 +1,892 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --myred: #D52315;
+    --myblack: #28282B;
+    --mygrey: #969696;
+    --mygold: #D4AF37;
+    --carioca-dark-blue: #336896;
+    --carioca-dark-blue2: #1d3d58;
+    --carioca-blue: #468dcb;
+    --carioca-blue2: #3d74a5;
+    --carioca-red: #e20613;
+    --carioca-red2: #91060f;
+    --dark-antiquewhite: #E1D3C1;
+    --brasileirao-green: #C8FE08;
+    --brasileirao-green2: #94bb07;
+    --brasileirao-main: #1C206A;
+    --brasileirao-main2: #0f1138;
+    --brasileirao-second: #2D338E;
+    --brasileirao-second2: #1c2058;
+    --brasileirao-red: #ff9187;
+    --brasileirao-red2: #bb6a62;
+    --conmebol-blue: #183C7B;
+    --conmebol-blue2: #102750;
+    --conmebol-silver: #C1C2C4;
+    --conmebol-silver2: #868688;
+}
+
+.myred {
+    background-color: var(--myred) !important;
+}
+
+.mywhite {
+    background-color: antiquewhite;
+}
+
+blockquote {
+    border-left: 5px solid var(--myred);
+    padding-left: 40px;
+}
+
+nav {
+    background-color: var(--myblack);
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 0.83em;
+    font-weight: bold;
+}
+
+
+h2 {
+    font-size: 24px;
+    font-style: italic;
+    margin-top:0.83em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 0.83em;
+    font-weight: bold;
+    
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+th h4 {
+    text-align: center;
+    margin: 2px 0 1px 0;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+p {
+    text-align: justify;    
+}
+
+img {
+    border-radius: 10px;
+}
+
+nav ul a {
+    color: var(--myblack);
+    padding: 0 32px;
+}
+
+table {
+    color: var(--myblack);
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: var(--dark-antiquewhite);
+}
+
+table.highlight>tbody>tr.br1:hover {
+    background-color: var(--brasileirao-main2) !important;
+}
+
+table.highlight>tbody>tr.br2:hover {
+    background-color: var(--brasileirao-second2) !important;
+}
+
+table.highlight>tbody>tr.brlib:hover {
+    background-color: var(--brasileirao-second2) !important;
+}
+
+table.highlight>tbody>tr.br3:hover {
+    background-color: var(--brasileirao-green2) !important;
+}
+
+table.highlight>tbody>tr.brreleg:hover {
+    background-color: var(--brasileirao-red2) !important;
+}
+
+table.highlight>tbody>tr.carioca1:hover {
+    background-color: var(--carioca-dark-blue2 ) !important;
+}
+
+table.highlight>tbody>tr.carioca2:hover {
+    background-color: var(--carioca-blue2 ) !important;
+}
+
+table.highlight>tbody>tr.cariocareleg:hover {
+    background-color: var(--carioca-red2 ) !important;
+}
+
+table.highlight>tbody>tr.sula1:hover {
+    background-color: var(--conmebol-blue2) !important;
+}
+
+table.highlight>tbody>tr.sula2:hover {
+    background-color: var(--conmebol-silver2) !important;
+}
+
+.table-logo-bra {
+    padding: 10px;
+    width: 20%;
+    background-color: var(--brasileirao-main);
+}
+
+.table-logo-sula {
+    padding: 10px;
+    width: 20%;
+    background-color: var(--conmebol-blue);
+}
+
+td, th {
+    padding: 5px 5px;
+}
+video {
+    border-radius: 10px;
+}
+
+.background {
+    background-color: antiquewhite;
+}
+
+.table-title {
+    width: 100%;
+    background-color: var(--myred);
+    color: antiquewhite;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: var(--myred);
+}
+
+.elenco {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.match {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.match .live {
+    padding: 0px;
+    border-radius: var(--border-radius);
+}
+
+.match .not-live {
+    padding: 0px;
+    border-radius: var(--border-radius);
+}
+
+.match-border {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.match-border .live {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 2px;
+}
+
+.match-border .not-live {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border: antiquewhite 2px solid;
+}
+
+.match-border::before {
+    content: "";
+    display: block;
+    background: linear-gradient(
+        90deg,
+        antiquewhite 20%,
+        var(--myred) 70%
+    );
+    height: 10000px;
+    width: 110%;
+    position: absolute;
+    animation: rotate 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn:focus,.btn-large:focus,.btn-small:focus {
+    background-color: #ad1b10;
+}
+
+.btn,.btn-large,.btn-small {
+    background-color: var(--myred);
+    margin-bottom: 3px;
+}
+
+.btn:hover,.btn-large:hover,.btn-small:hover {
+    background-color: #eb2717;
+}
+
+.card {
+    background-color: antiquewhite;
+}
+
+.card .card-content {
+    color: var(--myblack);
+}
+
+.card .card-image .card-title {
+    color: antiquewhite;
+}
+
+.card-center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+.card-panel {
+    background-color: var(--myblack);
+    margin: 0px;
+}
+
+.header-match {
+    background-color: var(--myblack);
+}
+
+.light-header-match {
+    background-color: antiquewhite;
+    border-bottom: solid 2px var(--myblack);
+}
+
+.header-match img {
+    border: none;
+}
+
+.error {
+    background: var(--myred);
+    color: antiquewhite;
+    padding: 5px;
+    width: 70%;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.error-pages {
+    background-image: url(/img/blurred.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-style {
+    background-color: antiquewhite;
+    border: solid var(--myred) 5px;
+    border-radius: 5px;
+    color: var(--myblack);
+    padding: 10px;
+}
+
+.form-style h1 {
+    margin-bottom: 20px;
+}
+
+.form-style label {
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+    padding-right: 5%;
+    width: 50%;
+    color: var(--myblack);
+}
+
+.form-style .field-container {
+    display: flex;
+    align-items: center;
+}
+
+.form-style .input-field {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.form-style .input-field label {
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 0;
+}
+
+[type="radio"]:checked+span:after {
+    background-color: var(--myred);
+}
+
+[type="radio"]:checked+span:after {
+    border: 2px solid var(--myred);
+}
+
+.game {
+    color: antiquewhite;
+    display: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.game-fixtures {
+    color: var(--myblack);
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-game {
+    color: var(--myblack);
+}
+
+.game span {
+    color: antiquewhite;
+    white-space: nowrap;
+}
+
+.light-game span {
+    color: var(--myblack);
+    white-space: nowrap;
+}
+
+.game-info {
+    display: flex;
+}
+
+.game-info-fixtures {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.games-list {
+    display: inline-block;
+}
+
+.games-list ol {
+    padding-left: 0px;
+}
+
+.games-list li {
+    margin: 5px 0px;
+}
+
+.goals {
+    font-size: 1.3125em;
+    font-family: opensans;
+    font-style: normal;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.table-goals {
+    font-size: 1.3125em;
+    font-family: opensans;
+    font-style: normal;
+    font-weight: 700;
+    vertical-align: middle;
+    color: var(--myblack);
+}
+
+
+.home-team {
+    margin-left: 8px;
+}
+
+.away-team {
+    margin-right: 8px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.show {
+    display: table-row-group !important;
+    visibility: visible !important;
+}
+
+.info {
+    font-size: 0.6875em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    text-transform: uppercase;
+    margin: 0px 20px;
+}
+
+.login-form {
+    background-color: var(--myblack);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.logo-fixed {
+    position: fixed;
+    bottom: 4.3%;
+    left: 80%;
+    text-align: center;
+    z-index: 2;
+}
+
+.modal {
+    max-height: none;
+    background-color: antiquewhite;
+}
+
+.modal .modal-footer {
+    background-color: antiquewhite;
+}
+
+.modal-body {
+    border: var(--mygrey) 1px solid;
+}
+
+.material-placeholder {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+.materialbox-caption {
+    color: antiquewhite;
+}
+
+.foto {
+    width: 30%;
+    margin: 5px 2px;
+    animation: fadeIn 3s;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn{
+    0% {
+    opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.next {
+    width: 10%;
+    text-align: center;
+}
+
+.next i:hover {
+    color: var(--myred)
+}
+
+.prev {
+    width: 10%;
+    text-align: center;
+}
+.prev i:hover {
+    color: var(--myred)
+}
+
+.player {
+    text-align: center;
+}
+
+.player-actions {
+    text-align: center;
+}
+
+.player-details {
+    margin: auto 5px;
+}
+
+.player-details p {
+    text-align: right;
+}
+
+.player-form {
+    background-color: var(--myblack);
+    width: 70%;
+    margin: auto;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.penalties-home {
+    margin-left: 5px;
+    font-size: .7em;
+}
+
+.penalties-away {
+    margin-right: 5px;
+    font-size: .7em;
+}
+
+.score {
+    display: flex;
+    padding-top: 2px;
+    justify-content: center;
+}
+
+.score-fixtures {
+    display: flex;
+    padding: 5px 0;
+    justify-content: center;
+}
+
+.score-box {
+    align-items: center;
+    color: antiquewhite;
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    margin: 0px 10px;
+}
+
+.score-away {
+    display: flex;
+}
+
+.score-away img {
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+}
+
+.score-fields {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.score-fields img {
+    width: 50px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 0;
+}
+
+.score-home {
+    display: flex;
+}
+
+.score-home img {
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+}
+
+.section {
+    color: antiquewhite;
+}
+
+.sidenav li {
+    text-shadow: 5px 5px 2px var(--mygold);
+    box-shadow: 1px 1px 2px 0px var(--myred);
+}
+
+.sidenav li>a {
+    padding: 0 16px;
+    color: var(--myblack);
+}
+
+.spinner-red, .spinner-red-only {
+    border-color: var(--myred);
+}
+
+.team {
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+.versus {
+    display: flex;
+    height: 8px;
+    margin: 0 5px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 9px;
+}
+
+.wages-actions {
+    text-align: center;
+}
+
+
+.wages-form {
+    background-color: var(--myblack);
+    width: 70%;
+    margin: auto;
+}
+
+[type="checkbox"].filled-in:disabled:checked+span:not(.lever):after {
+    background-color: #26a69a;
+    border-color: #26a69a;
+    cursor: not-allowed;
+}
+
+[type="checkbox"].filled-in:disabled:checked+span:not(.lever):before {
+    cursor: not-allowed;
+}
+
+#audio {
+    position: fixed;
+    bottom: 4.3%;
+    opacity: 0.9;
+}
+
+#front-page-logo {
+    display: inline-block;
+    height: 100%;
+    pointer-events: none;
+}
+
+#watermark{
+    width: 50%;
+    height: auto;
+    border: 0px;
+    opacity: 40%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .modal {
+        width: 80%;
+    }
+
+    .foto {
+        width: 25%;
+        height: 25%;
+    }
+}
+
+
+@media only screen and (max-width: 932px) {
+    
+    .game-score {
+        display: block;
+        visibility: visible;
+    }
+
+
+    @media (orientation: landscape) {
+        .player-details p{
+            font-size: 12px;
+        }
+    }
+}
+
+@media only screen and (max-width: 882px) {
+    @media (orientation: landscape) {
+        .modal {
+            width: 65%;
+        }
+
+        .player-details p{
+            font-size: 10px;
+        }
+
+        .modal .modal-content {
+            padding: 16px;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 540px) {
+    .card-center {
+        width: auto;
+    }
+
+    .carioca {
+        padding: 10px;
+        font-size: smaller;
+    }
+
+    .match .live {
+        padding: 0px;
+    }
+    
+    .elenco {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+    .foto {
+        width: 40%;
+    }
+    
+    .form-style {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .form-style label {
+        padding: 0;
+        width: -webkit-fill-available;
+        text-align: center;
+    }
+    
+    .form-style .field-container {
+        display: block;
+        text-align: center;
+    }
+    
+    .form-style .input-field label {
+        width: auto;
+    }
+
+    .hide-table {
+        display: none;
+        visibility: hidden;
+    }
+    
+    .player-info {
+        display: block;
+    }
+    
+    .player-details p {
+        text-align: center;
+    }
+    
+    .game {
+        display: none;
+        visibility: hidden;
+        padding: 0px;
+    }
+    
+    .game-info {
+        justify-content: center;
+    }
+    
+    .login-form {
+        width: 90%;
+    }
+    
+    .player-form {
+        width: 95%;
+    }
+    
+    .score {
+        justify-content: center;
+    }
+
+    .table-h4 th h4{
+        font-size: small;
+    }
+
+    .table-logo-bra {
+        width: 30%;
+    }
+
+    .table-logo-sula {
+        width: 40%;
+    }
+
+    #mode-hover {
+    width: 100%;
+}
+    
+}
+
+
+@media only screen and (max-width: 390px) {
+    blockquote {
+        padding-left: 30px;
+        font-size: 13px;
+    }
+
+    .dev-actions {
+        display: grid;
+    }
+    
+    .error-pages {
+        background-size: contain;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    blockquote {
+        margin: revert;
+    }
+    
+    .player-details p {
+        font-size: 13px;
+    }
+
+    .games-list {
+        margin: 0 -35px;
+    }
+
+    .games-list li {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 344px) {
+    blockquote {
+        margin: 30px;
+    }
+}
+
+
+
+@media only screen and (max-width: 280px) {    
+    
+    input, label, select {
+        font-size: 12px;
+    }
+    
+}

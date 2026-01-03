@@ -71,43 +71,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#28282B"/>
-    <title>Developer - Wages</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
+    <head>
+        <title>Salaries</title>
+        <?php include('head.php');?>
+    </head>
 
-<body class="wages-form">
-    <?php include('loggedinheader.php');?>
+    <body>
+        <?php include('logged-in-header.php');?>
 
-    <div class="section">
-        <div class="card-panel">   
-            <span>
-                <div class="form-style">
-                    <h1 class="center">Gerenciar Salários</h1>
+        <div class="container">
+            <div class="form-style">
 
-                    <!-- Player selection form -->
-                    <form id="playerForm" action="/wages.php" method="post">
-                        <div class="field-container" style="padding-bottom:5px; border-bottom: solid #D52315 0.5px; margin-bottom:10px">
-                            <label for="jogador" style="padding-top: 8px">
-                                <!--Testing without class browser default-->
-                                <!-- IMPORTANT, use class browser-default as materialize css does not work properly with select on ios iphone-->
-                                <select name="jogador" id="jogador" class="browser-default" style="
-                                        background-color: antiquewhite;
-                                        color: var(--myred);
-                                        font-weight: bold;
-                                        font-style: italic;
-                                        border: var(--mygrey) 1px solid;">
-                                    <option value="" disabled selected>Selecionar jogador</option>
+                <h1>Manage Salaries</h1>
+
+                <!-- Player selection form -->
+                <form id="playerForm" action="/wages.php" method="post">
+                    <div class="form-container-select">
+                        <div>
+                            <label for="jogador">
+                                <select style="margin-bottom: 10px" class="input-field input-field-select" name="jogador" id="jogador">
+                                    <option value="" disabled selected>Select Player</option>
                                     <?php 
                                         $sql = 'SELECT apelido, id FROM players WHERE apelido <> "" ORDER BY apelido;';
                                         $result = mysqli_query($conn,$sql);  // here i am run the query
@@ -126,283 +109,269 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $now < $_SESSION[
                                 </select>
                             </label>
 
-                            <label for="ano" style="padding-top: 8px">
-                                <!--Testing without class browser default-->
-                                <!-- IMPORTANT, use class browser-default as materialize css does not work properly with select on ios iphone-->
-                                <select name="ano" id="ano" class="browser-default" style="
-                                        background-color: antiquewhite;
-                                        color: var(--myred);
-                                        font-weight: bold;
-                                        font-style: italic;
-                                        border: var(--mygrey) 1px solid;">
-                                    <option value="">Selecionar o Jogador:</option>
+                            <label for="ano">
+                                <select class="input-field input-field-select" name="ano" id="ano">
+                                    <option value="">Select a Player First!</option>
                                 </select>
                             </label>
-
-                            <div class="input-field"  style="display: grid; margin: auto;">
-                                <input type="submit" name="buscar" value="Buscar" class="btn btn-info">
-                                <button type="button" id="reset" class="btn btn-warning">Limpar</button>
-                            </div>
                         </div>
-                    </form>
+                        
 
-                    <!-- Player details form -->
-                    <form id="paymentForm" action="/wages_results.php" method="post" enctype="multipart/form-data">
+                        <div>
+                            <button type="submit" name="buscar" value="select" class="btn btn-form">Select</button>
+                            <button type="submit" name="select" calue="limpar" class="btn btn-form">Clear</button>
+                        </div>
+                    </div>
+                </form>
 
-                        <div class="form-container">
-                            <div class="field-container">
-                                <label for="nome_completo">Nome Completo:</label>
-                                <div class=input-fields>
-                                    <input disabled type="text" id="nome_completo" name="nome_completo" placeholder="Fulano Sicrano Beltrano" style="color: #28282B">
-                                </div>
-                            </div>
+                <!-- Player details form -->
+                <form id="paymentForm" action="/wages-results.php" method="post" enctype="multipart/form-data">
 
-                            <div class="field-container">
-                                <label for="tdc">Término de Contrato:</label>
-                                <div class=input-fields>
-                                    <input disabled type="date" id="tdc" name="tdc" style="color: #28282B">
-                                </div>
-                            </div>
+                    <div class="form-container">
+                        <div class="field-container">
+                            <label class="label-field" for="nome_completo">Full Name:</label>
+                            <input class="input-field" disabled type="text" id="nome_completo" name="nome_completo" placeholder="Fulano Sicrano Beltrano">
+                        </div>
 
-                            <div class="field-container">
-                                <label for="salario">Salário:</label>
-                                <div class=input-fields>
-                                    <input type="text" id="salario" name="salario" placeholder="R$ xxx.xxx,xx" disabled style="
-                                        font-weight: bold;
-                                        font-style: italic;
-                                        background-color: var(--mygrey);
-                                        -webkit-text-fill-color: var(--mygold);
-                                        padding: 0 5px;">
-                                </div>
-                            </div>
+                        <div class="field-container">
+                            <label class="label-field" for="tdc">Contract Expiry:</label>
+                            <input class="input-field" disabled type="date" id="tdc" name="tdc" style="color: #28282B">
+                        </div>
 
-                            <div class="form-container">
-                                <!--do not use class .field-container as this section is using materialize grid-->
-                                <div class="input-field">
-                                    <div class="row" style="padding: 10px; margin-left: 10%; margin-right: unset;">
-                                        <p class="col s4">
-                                            <label for="1">
-                                                <input type="checkbox" class="filled-in" id="1" name="mes[]" value="01">
-                                                <span>Janeiro</span>
-                                            </label>
+                        <div class="field-container">
+                            <label class="label-field" for="salario">Salário:</label>
+                            <input class="input-field" type="text" id="salario" name="salario" placeholder="R$ xxx.xxx,xx" disabled>
+                        </div>
+
+                        <div class="field-container">
+                            <div class="input-field months">
+                                <div class="months-field">
+                                    <div>
+                                        <p>
+                                            <label for="1"></label>
+                                            <input type="checkbox" id="1" name="mes[]" value="01">
+                                            <span class="months-field-full">January</span>
+                                            <span class="months-field-short">JAN</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="2">
-                                                <input type="checkbox" class="filled-in" id="2" name="mes[]" value="02">
-                                                <span>Fevereiro</span>
-                                            </label>
+                                        <p>
+                                            <label for="2"></label>
+                                            <input type="checkbox" id="2" name="mes[]" value="02">
+                                            <span class="months-field-full">February</span>
+                                            <span class="months-field-short">FEB</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="3">
-                                                <input type="checkbox" class="filled-in" id="3" name="mes[]" value="03">
-                                                <span>Março</span>
-                                            </label>
+                                        <p>
+                                            <label for="3"></label>
+                                            <input type="checkbox" id="3" name="mes[]" value="03">
+                                            <span class="months-field-full">March</span>
+                                            <span class="months-field-short">MAR</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="4">
-                                                <input type="checkbox" class="filled-in" id="4" name="mes[]" value="04">
-                                                <span>Abril</span>
-                                            </label>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <label for="4"></label>
+                                            <input type="checkbox" id="4" name="mes[]" value="04">
+                                            <span class="months-field-full">April</span>
+                                            <span class="months-field-short">APR</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="5">
-                                                <input type="checkbox" class="filled-in" id="5" name="mes[]" value="05">
-                                                <span>Maio</span>
-                                            </label>
+                                        <p>
+                                            <label for="5"></label>
+                                            <input type="checkbox" id="5" name="mes[]" value="05">
+                                            <span class="months-field-full">May</span>
+                                            <span class="months-field-short">MAY</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="6">
-                                                <input type="checkbox" class="filled-in" id="6" name="mes[]" value="06">
-                                                <span>Junho</span>
-                                            </label>
+                                        <p>
+                                            <label for="6"></label>
+                                            <input type="checkbox" id="6" name="mes[]" value="06">
+                                            <span class="months-field-full">June</span>
+                                            <span class="months-field-short">JUN</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="7">
-                                                <input type="checkbox" class="filled-in" id="7" name="mes[]" value="07">
-                                                <span>Julho</span>
-                                            </label>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <label for="7"></label>
+                                            <input type="checkbox" id="7" name="mes[]" value="07">
+                                            <span class="months-field-full">July</span>
+                                            <span class="months-field-short">JUL</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="8">
-                                                <input type="checkbox" class="filled-in" id="8" name="mes[]" value="08">
-                                                <span>Agosto</span>
-                                            </label>
+                                        <p>
+                                            <label for="8"></label>
+                                            <input type="checkbox" id="8" name="mes[]" value="08">
+                                            <span class="months-field-full">August</span>
+                                            <span class="months-field-short">AUG</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="9">
-                                                <input type="checkbox" class="filled-in" id="9" name="mes[]" value="09">
-                                                <span>Setembro</span>
-                                            </label>
+                                        <p>
+                                            <label for="9"></label>
+                                            <input type="checkbox" id="9" name="mes[]" value="09">
+                                            <span class="months-field-full">September</span>
+                                            <span class="months-field-short">SEP</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="10">
-                                                <input type="checkbox" class="filled-in" id="10" name="mes[]" value="10">
-                                                <span>Outubro</span>
-                                            </label>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <label for="10"></label>
+                                            <input type="checkbox" id="10" name="mes[]" value="10">
+                                            <span class="months-field-full">October</span>
+                                            <span class="months-field-short">OCT</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="11">
-                                                <input type="checkbox" class="filled-in" id="11" name="mes[]" value="11">
-                                                <span>Novembro</span>
-                                            </label>
+                                        <p>
+                                            <label for="11"></label>
+                                            <input type="checkbox" id="11" name="mes[]" value="11">
+                                            <span class="months-field-full">November</span>
+                                            <span class="months-field-short">NOV</span>
                                         </p>
-                                        <p class="col s4">
-                                            <label for="12">
-                                                <input type="checkbox" class="filled-in" id="12" name="mes[]" value="12">
-                                                <span>Dezembro</span>
-                                            </label>
+                                        <p>
+                                            <label for="12"></label>
+                                            <input type="checkbox" id="12" name="mes[]" value="12">
+                                            <span class="months-field-full">December</span>
+                                            <span class="months-field-short">DEC</span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <input type="hidden" id="player_id" name="player_id">
-                            <input type="hidden" id="ano_hidden" name="ano">
-                            <input type="hidden" id="nome_hidden" name="nome_completo">
-                            <input type="hidden" id="salario_hidden" name="salario">
-                            
-                            <div class="wages-actions">
-                                <input type="submit" id="payButton" name="pay" value="Efetuar Pagamento" class="btn btn-info" disabled>
-                            </div>
-                        </form>
+                        <input type="hidden" id="player_id" name="player_id">
+                        <input type="hidden" id="ano_hidden" name="ano">
+                        <input type="hidden" id="nome_hidden" name="nome_completo">
+                        <input type="hidden" id="salario_hidden" name="salario">
+                        
+                        <div class="form-actions">
+                            <button type="submit" id="payButton" name="pay" class="btn btn-form" disabled>Make Payment</button>
+                        </div>
                     </div>
-
-                </div>
-
-                <p class="center">
-                    <br>
-                    <a href="/dev_options.php">Go to options menu</a><br>
-                    <a href="/squad.php">Go to Squad page</a>
-                </p>
-            </span>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const jogadorSelect = document.getElementById("jogador");
-            const anoSelect = document.getElementById("ano");
-            const playerForm = document.getElementById("playerForm");
-            const resetButton = document.getElementById("reset");
-            const payButton = document.getElementById("payButton");
+        <?php include('back-to-options.html');?>
+        <?php include('back-to-main.html');?>
 
-            const nomeCompleto = document.getElementById("nome_completo");
-            const tdc = document.getElementById("tdc");
-            const salario = document.getElementById("salario");
-            
+        <?php include('footer.php');?>
 
-            // Fetch available years when a player is selected
-            jogadorSelect.addEventListener("change", async () => {
-                const playerId = jogadorSelect.value;
-                //console.log("Selected player:", playerId);
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const jogadorSelect = document.getElementById("jogador");
+                const anoSelect = document.getElementById("ano");
+                const playerForm = document.getElementById("playerForm");
+                const resetButton = document.getElementById("reset");
+                const payButton = document.getElementById("payButton");
 
-                if (!playerId) return;
+                const nomeCompleto = document.getElementById("nome_completo");
+                const tdc = document.getElementById("tdc");
+                const salario = document.getElementById("salario");
+                
 
-                try {
-                    const response = await fetch(`wages.php?action=getYears&player_id=${playerId}`);
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                // Fetch available years when a player is selected
+                jogadorSelect.addEventListener("change", async () => {
+                    const playerId = jogadorSelect.value;
+                    //console.log("Selected player:", playerId);
 
-                    const data = await response.json();
-                    //console.log("Fetch Response (years):", data);
+                    if (!playerId) return;
 
-                    // Clear and populate "ano" select
-                    anoSelect.innerHTML = '<option value="">Selecionar o Ano:</option>';
-                    data.forEach(ano => {
-                        const option = document.createElement("option");
-                        option.value = ano;
-                        option.textContent = ano;
-                        anoSelect.appendChild(option);
-                    });
+                    try {
+                        const response = await fetch(`wages.php?action=getYears&player_id=${playerId}`);
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-                } catch (error) {
-                    console.error("Fetch Error (getYears):", error);
+                        const data = await response.json();
+                        //console.log("Fetch Response (years):", data);
+
+                        // Clear and populate "ano" select
+                        anoSelect.innerHTML = '<option value="">Selecionar o Ano:</option>';
+                        data.forEach(ano => {
+                            const option = document.createElement("option");
+                            option.value = ano;
+                            option.textContent = ano;
+                            anoSelect.appendChild(option);
+                        });
+
+                    } catch (error) {
+                        console.error("Fetch Error (getYears):", error);
+                    }
+                });
+
+                // Handle form submission to fetch player data
+                playerForm.addEventListener("submit", async (event) => {
+                    event.preventDefault();
+
+                    const playerId = jogadorSelect.value;
+                    const ano = anoSelect.value;
+
+                    if (!playerId || !ano) {
+                        alert("Selecione jogador e ano!");
+                        return;
+                    }
+
+                    //adding hidden fields
+                    document.getElementById('player_id').value = playerId;
+                    document.getElementById('ano_hidden').value = ano;
+
+                    try {
+                        const response = await fetch(`wages.php?action=getPlayerData&player_id=${playerId}&ano=${ano}`);
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                        const data = await response.json();
+                        //console.log("Fetch Response (player data):", data);
+
+                        // Populate player info
+                        nomeCompleto.value = data.nome_completo || "";
+                        tdc.value = data.tdc || "";
+                        salario.value = "R$ " + (data.salario || "0,00");
+
+                        // Update hidden fields for POST
+                        document.getElementById('nome_hidden').value = data.nome_completo || "";
+                        document.getElementById('salario_hidden').value = data.salario || "";
+
+                        // Update checkboxes based on pagamentos
+                        for (let month = 1; month <= 12; month++) {
+                            const monthNum = month.toString().padStart(2, "0");
+                            const checkbox = document.getElementById(month.toString());
+                            if (!checkbox) continue;
+
+                            if (data.pagamentos[monthNum]) {
+                                checkbox.checked = true;
+                                checkbox.disabled = true; // already paid
+                            } else {
+                                checkbox.checked = false;
+                                checkbox.disabled = false; // allow payment
+                            }
+                        }
+
+                        enablePayButton(true);
+                    } catch (error) {
+                        console.error("Fetch Error (getPlayerData):", error);
+                    }
+                });
+
+                // Enable or disable "Efetuar Pagamento" button
+                function enablePayButton(enable) {
+                    payButton.disabled = !enable;
                 }
-            });
 
-            // Handle form submission to fetch player data
-            playerForm.addEventListener("submit", async (event) => {
-                event.preventDefault();
+                // Reset everything when "Limpar" is clicked
+                resetButton.addEventListener("click", () => {
+                    jogadorSelect.selectedIndex = 0;
+                    anoSelect.innerHTML = '<option value="">Selecionar o Jogador</option>';
 
-                const playerId = jogadorSelect.value;
-                const ano = anoSelect.value;
+                    nomeCompleto.value = "";
+                    tdc.value = "";
+                    salario.value = "";
 
-                if (!playerId || !ano) {
-                    alert("Selecione jogador e ano!");
-                    return;
-                }
-
-                //adding hidden fields
-                document.getElementById('player_id').value = playerId;
-                document.getElementById('ano_hidden').value = ano;
-
-                try {
-                    const response = await fetch(`wages.php?action=getPlayerData&player_id=${playerId}&ano=${ano}`);
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-                    const data = await response.json();
-                    //console.log("Fetch Response (player data):", data);
-
-                    // Populate player info
-                    nomeCompleto.value = data.nome_completo || "";
-                    tdc.value = data.tdc || "";
-                    salario.value = "R$ " + (data.salario || "0,00");
-
-                    // Update hidden fields for POST
-                    document.getElementById('nome_hidden').value = data.nome_completo || "";
-                    document.getElementById('salario_hidden').value = data.salario || "";
-
-                    // Update checkboxes based on pagamentos
-                    for (let month = 1; month <= 12; month++) {
-                        const monthNum = month.toString().padStart(2, "0");
-                        const checkbox = document.getElementById(month.toString());
-                        if (!checkbox) continue;
-
-                        if (data.pagamentos[monthNum]) {
-                            checkbox.checked = true;
-                            checkbox.disabled = true; // already paid
-                        } else {
+                    // Reset checkboxes
+                    for (let i = 1; i <= 12; i++) {
+                        const checkbox = document.getElementById(i.toString());
+                        if (checkbox) {
                             checkbox.checked = false;
-                            checkbox.disabled = false; // allow payment
+                            checkbox.disabled = false;
                         }
                     }
 
-                    enablePayButton(true);
-                } catch (error) {
-                    console.error("Fetch Error (getPlayerData):", error);
-                }
+                    enablePayButton(false);
+                });
             });
+        </script>
 
-            // Enable or disable "Efetuar Pagamento" button
-            function enablePayButton(enable) {
-                payButton.disabled = !enable;
-            }
-
-            // Reset everything when "Limpar" is clicked
-            resetButton.addEventListener("click", () => {
-                jogadorSelect.selectedIndex = 0;
-                anoSelect.innerHTML = '<option value="">Selecionar o Jogador</option>';
-
-                nomeCompleto.value = "";
-                tdc.value = "";
-                salario.value = "";
-
-                // Reset checkboxes
-                for (let i = 1; i <= 12; i++) {
-                    const checkbox = document.getElementById(i.toString());
-                    if (checkbox) {
-                        checkbox.checked = false;
-                        checkbox.disabled = false;
-                    }
-                }
-
-                enablePayButton(false);
-            });
-        });
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src='/script.js'></script>
-</body>
+        <script src='/script.js'></script>
+    </body>
 </html>
 
 <?php 
